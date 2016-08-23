@@ -21,7 +21,7 @@ It then creates the list of email addresses.
 
 Usage:
 
-./parse.py <email_domain> <mode> <optional_names_file>
+./theprepper.py <email_domain> <mode> <optional_names_file>
 
 modes:
 
