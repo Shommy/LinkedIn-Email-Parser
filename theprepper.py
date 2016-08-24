@@ -25,7 +25,7 @@ Usage:
 
 modes:
 
-1 - <first_initial><last_name>@domain (default)
+1 - <first_initial><last_name>@domain
 2 - <first_name><last_initial>@domain
 3 - <first_name>.<last_name>@domain
 4 - <first_name><last_name>@domain
@@ -45,6 +45,12 @@ def main(args):
 
 	domain = args[0]
 	mode = int(args[1])
+
+	if mode not in (1,2,3,4):
+		print
+		print "Unknown mode : " + str(mode)
+		print usage
+		sys.exit(1)
 
 	if len(args) > 2:
 		in_file = open(args[2])
@@ -70,8 +76,13 @@ def make_email(line, domain, mode):
 		username = words[0].lower() + "." + words[len(words)-1].lower()
 	elif mode == 2:
 		username = words[0].lower() + words[len(words)-1].lower()[0]
-	else: # 1 and default
+	elif mode == 1:
 		username = words[0].lower()[0] + words[len(words)-1].lower()
+	else:
+		print
+		print "Input error"
+		print usage
+		sys.exit(1)
 
 	return username + "@" + domain
 

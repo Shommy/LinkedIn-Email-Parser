@@ -11,7 +11,7 @@ Usage:
 
 modes:
 
-1 - <first_initial><last_name>@domain (default)
+1 - <first_initial><last_name>@domain
 2 - <first_name><last_initial>@domain
 3 - <first_name>.<last_name>@domain
 4 - <first_name><last_name>@domain
