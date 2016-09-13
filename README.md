@@ -15,6 +15,8 @@ modes:
 2 - <first_name><last_initial>@domain
 3 - <first_name>.<last_name>@domain
 4 - <first_name><last_name>@domain
+5 - <first_name>@domain
+6 - <last_name>@domain
 
 Examples:
 

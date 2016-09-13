@@ -29,6 +29,8 @@ modes:
 2 - <first_name><last_initial>@domain
 3 - <first_name>.<last_name>@domain
 4 - <first_name><last_name>@domain
+5 - <first_name>@domain
+6 - <last_name>@domain
 
 Examples:
 
@@ -46,7 +48,7 @@ def main(args):
 	domain = args[0]
 	mode = int(args[1])
 
-	if mode not in (1,2,3,4):
+	if mode not in (1,2,3,4,5,6):
 		print
 		print "Unknown mode : " + str(mode)
 		print usage
@@ -70,7 +72,11 @@ def main(args):
 
 def make_email(line, domain, mode):
 	words = line.strip().split()
-	if mode == 4:
+	if mode == 6:
+		username = words[len(words)-1].lower()
+	elif mode == 5:
+		username = words[0].lower()
+	elif mode == 4:
 		username = words[0].lower() + words[len(words)-1].lower()
 	elif mode == 3:
 		username = words[0].lower() + "." + words[len(words)-1].lower()
